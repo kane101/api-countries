@@ -20,7 +20,7 @@
 	color: var(--text-color);
 	.loading-spinner {
 		animation: spinner 2s infinite forwards;
-		width: 20rem;
+		width: 10rem;
 		fill: var(--text-color);
 	}
 	@keyframes spinner {
