@@ -12,7 +12,6 @@ export const Routes = [
 		component: Country,
 	},
 	{
-		path: '*',
 		component: Error,
 	},
 ];

@@ -1,4 +1,4 @@
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import { Routes } from 'Routes';
 import { AppProvider } from 'Context';
 
@@ -7,7 +7,11 @@ function App() {
 		return <Route exact path={path} component={component} key={key} />;
 	});
 
-	return <AppProvider>{RoutesList}</AppProvider>;
+	return (
+		<AppProvider>
+			<Switch>{RoutesList}</Switch>
+		</AppProvider>
+	);
 }
 
 export default App;
