@@ -1,0 +1,118 @@
+.back-arrow {
+	display: flex;
+	align-items: center;
+	padding: 1.4rem 3rem;
+	font-size: 1.5rem;
+	cursor: pointer;
+	position: relative;
+	border-radius: 0.5rem;
+	background-color: var(--elements);
+	color: var(--text-color);
+	fill: var(--text-color);
+	border: none;
+	box-shadow: 0 0.2rem 1rem 0 rgba(0, 0, 0, 0.2);
+	margin-top: 6rem;
+	margin-bottom: 8rem;
+	outline: none;
+	&__icon {
+		margin-right: 1.5rem;
+		width: 2rem;
+	}
+	&__icon g {
+		fill: var(--text-color);
+	}
+}
+
+.single {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 5rem;
+	align-items: center;
+	font-size: 1.8rem;
+	margin-bottom: 6rem;
+	&__image {
+		img {
+			box-shadow: 0 0.2rem 1rem 0 rgba(0, 0, 0, 0.2);
+			display: block;
+		}
+	}
+	&__content {
+		max-width: 60rem;
+	}
+}
+
+.country-detail {
+	&__title {
+		margin-bottom: 5rem;
+		color: var(--text-color);
+	}
+	&__Wrapper {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		margin-bottom: 6rem;
+	}
+	&__right {
+		justify-self: right;
+	}
+	&__stat {
+		margin-bottom: 0.3rem;
+		font-weight: 600;
+		color: var(--text-color);
+		margin-bottom: 1rem;
+		span {
+			font-weight: 300;
+		}
+	}
+}
+.borders {
+	font-weight: 600;
+	display: flex;
+	white-space: nowrap;
+	align-items: center;
+	color: var(--text-color);
+	.border-buttons {
+		display: flex;
+		flex-wrap: wrap;
+		max-width: 100%;
+		margin-left: 1rem;
+	}
+	.border-button {
+		border: none;
+		padding: 0.5rem 3rem;
+		background-color: var(--elements);
+		color: var(--text-color);
+		box-shadow: 0 0.2rem 1rem 0 rgba(0, 0, 0, 0.1);
+		border-radius: 0.2rem;
+		font-weight: 300;
+		font-size: 1.1rem;
+		outline: none;
+		margin: 0.5rem 1rem;
+	}
+}
+
+@include break(sm) {
+	.single {
+		grid-template-columns: repeat(1, 1fr);
+	}
+
+	.country-detail {
+		&__Wrapper {
+			grid-template-columns: repeat(1, 1fr);
+		}
+		&__left {
+			margin-bottom: 5rem;
+		}
+		&__right {
+			justify-self: left;
+		}
+	}
+	.borders {
+		flex-direction: column;
+		align-items: flex-start;
+		.border-buttons {
+			margin-left: 0;
+			margin-top: 5rem;
+			justify-content: flex-start;
+		}
+	}
+}

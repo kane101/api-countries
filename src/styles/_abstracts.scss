@@ -1,0 +1,36 @@
+$DarkBlue: hsl(209, 23%, 22%); /* (Dark Mode Elements) */
+$VeryDarkBlueBack: hsl(207, 26%, 17%); /* (Dark Mode Background) */
+$VeryDarkBlue: hsl(200, 15%, 8%); /* (Light Mode Text) */
+$DarkGray: hsl(0, 0%, 52%); /* (Light Mode Input) */
+$VeryLightGray: hsl(0, 0%, 98%); /* (Light Mode Background) */
+$white: hsl(0, 0%, 100%); /* (Dark Mode Text & Light Mode Elements) */
+$black: #000000;
+
+@mixin variables($background, $text-color, $elements) {
+}
+
+.wrapper {
+	min-height: 100vh;
+	--background: hsl(0, 0%, 98%);
+	--text-color: hsl(200, 15%, 8%);
+	--elements: hsl(0, 0%, 100%);
+}
+
+.wrapper.dark {
+	--background: hsl(207, 26%, 17%);
+	--text-color: hsl(0, 0%, 100%);
+	--elements: hsl(209, 23%, 22%);
+	background-color: var(--background);
+}
+
+$sizes: (
+	'xs': 520px,
+	'sm': 768px,
+	'md': 992px,
+) !default;
+
+@mixin break($size, $direction: max-width) {
+	@media (#{$direction}: map-get($sizes , $size )) {
+		@content;
+	}
+}

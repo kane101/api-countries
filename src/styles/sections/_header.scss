@@ -1,0 +1,35 @@
+.header {
+	box-shadow: 0 0.2rem 0.4rem 0 rgba(0, 0, 0, 0.1);
+	background: var(--elements);
+	color: var(--text-color);
+	.container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		height: 8rem;
+	}
+	&__toggle {
+		font-size: 1.8rem;
+		display: flex;
+		align-items: center;
+		cursor: pointer;
+		svg {
+			width: 20px;
+			margin-right: 0.7rem;
+		}
+	}
+}
+
+@include break(xs) {
+	.header {
+		&__logo {
+			font-size: 2rem;
+		}
+		&__toggle {
+			font-size: 1.5rem;
+			svg {
+				width: 15px;
+			}
+		}
+	}
+}

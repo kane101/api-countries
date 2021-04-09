@@ -1,0 +1,91 @@
+.countries {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-auto-rows: 1fr;
+	align-items: start;
+	justify-items: center;
+	gap: 4rem;
+	margin-bottom: 5rem;
+	height: 100%;
+	a {
+		text-decoration: none;
+	}
+}
+
+.empty-result {
+	flex: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--text-color);
+	.loading-spinner {
+		animation: spinner 2s infinite forwards;
+		width: 20rem;
+		fill: var(--text-color);
+	}
+	@keyframes spinner {
+		from {
+			transform: rotate(0deg);
+		}
+		from {
+			transform: rotate(360deg);
+		}
+	}
+}
+
+.country {
+	font-size: 1.5rem;
+	background-color: var(--elements);
+	box-shadow: 0 0.2rem 0.8rem 0 rgba(0, 0, 0, 0.1);
+	text-decoration: none;
+	border-radius: 0.5rem;
+	overflow: hidden;
+	&__flag img {
+		object-fit: cover;
+		height: 16rem;
+		display: block;
+		width: 100%;
+	}
+	&__body {
+		padding: 2.4rem;
+		min-height: 17.5rem;
+	}
+	&__name {
+		margin-bottom: 1.5rem;
+		color: var(--text-color);
+	}
+	&__detail {
+		margin-bottom: 0.3rem;
+		font-weight: 600;
+		color: var(--text-color);
+		span {
+			font-weight: 300;
+		}
+	}
+}
+
+@include break(md) {
+	.countries {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+@include break(sm) {
+	.countries {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+@include break(xs) {
+	.countries {
+		grid-template-columns: repeat(1, 1fr);
+		grid-auto-rows: auto;
+	}
+	.country {
+		&__flag img {
+			height: auto;
+		}
+		&__content {
+			min-height: auto;
+		}
+	}
+}

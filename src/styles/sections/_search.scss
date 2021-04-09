@@ -1,0 +1,67 @@
+.search {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 5rem;
+	&__form {
+		background: var(--elements);
+		box-shadow: 0 0.2rem 0.9rem 0 rgba(0, 0, 0, 0.1);
+		display: grid;
+		grid-template-columns: 6.8rem auto;
+		border-radius: 0.5rem;
+		max-width: 48rem;
+		width: 100%;
+		color: var(--text-color);
+		svg {
+			width: 2rem;
+			justify-self: center;
+			align-self: center;
+		}
+	}
+	&__input {
+		border: none;
+		outline: none;
+		height: 5rem;
+		background: transparent;
+		color: var(--text-color);
+	}
+}
+.select svg {
+	transition: 0.3s ease;
+}
+
+.select {
+	&__options {
+		max-height: 0;
+		overflow-y: hidden;
+		transition: 0.3s ease;
+	}
+	&__option.active {
+		font-weight: 600;
+	}
+	&.active &__options {
+		max-height: 30rem;
+	}
+	&.active svg {
+		transform: rotate(180deg);
+		transform-origin: center;
+	}
+}
+
+@include break(sm) {
+	.search {
+		display: flex;
+		flex-direction: column;
+		&__form {
+			margin-bottom: 2rem;
+		}
+	}
+
+	.select {
+		width: 100%;
+		max-width: 48rem;
+		&__toggle {
+			width: 100%;
+		}
+	}
+}
